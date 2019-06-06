@@ -18,6 +18,7 @@ with open(election_data_csv, newline = '', encoding='utf8') as csv_file:
 
     row_count = 0
 
+    # get all of the candidates and add them to a dictionary
     for row in csv_reader:
         row_count = row_count + 1
         if row[2] not in dict_candidates:
@@ -25,6 +26,7 @@ with open(election_data_csv, newline = '', encoding='utf8') as csv_file:
         else:
             dict_candidates[row[2]] = dict_candidates[row[2]] + 1
 
+    # loop through the candidate names and get the number of votes they received
     winner = ""
     most_votes = 0
     for key in dict_candidates:
@@ -34,7 +36,7 @@ with open(election_data_csv, newline = '', encoding='utf8') as csv_file:
             winner = key
 
     s = "O'Tooley"
-    
+
     print('-'*40)
     print("Election Results")
     print('-'*40)
@@ -49,6 +51,7 @@ with open(election_data_csv, newline = '', encoding='utf8') as csv_file:
     print('-'*40)
 
 
+# write to an external file
 output_path = "output2.txt"
 
 with open(output_path, 'w', newline='') as csvfile:
