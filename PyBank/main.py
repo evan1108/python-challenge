@@ -9,7 +9,7 @@ budget_data_csv = "budget_data.csv"
 # csvfile is the opened file
 with open(budget_data_csv, newline = '', encoding='utf8') as csv_file:
 
-    # iterable list variable
+    # create an iterable list variable
     csv_reader = csv.reader(csv_file, delimiter = ',')
 
     # skip header row
@@ -23,7 +23,7 @@ with open(budget_data_csv, newline = '', encoding='utf8') as csv_file:
     max_pl = 0
     max_pl_month = ""
 
-    # loop over all of the rows in the file
+    # loop through the rows in the file and get P&L max, mins, number of months
     for row in csv_reader:
         num_months = num_months + 1
         total_pl = total_pl + int(row[1])
