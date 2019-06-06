@@ -36,7 +36,13 @@ with open(budget_data_csv, newline = '', encoding='utf8') as csv_file:
     
     average_pl = round(total_pl/num_months, 2)
 
-    print(f"number of months: {num_months}, total p & l: {total_pl}, average p & l: {average_pl}, min p & l: {min_pl}, max p & l: {max_pl}")
+print('Financial Analysis')
+print('----------------------------')
+print(f"Total Months: {num_months}")
+print(f"Total: {total_pl}")
+print(f"Average Change: {average_pl}")
+print(f"Greatest Increase in Profits: {max_pl_month} ({max_pl})")
+print(f"Greatest Decrease in Profits: {min_pl_month} ({min_pl})") 
 
 
 output_path = "output.txt"
